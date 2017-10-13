@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+	<h1>Overview</h1>
+	<p>The folder contains bat files along with configuration files needed to run services and applications located in the <code>../bin-ext</code> folder. Some temporary and log files are also created here</p>
+
+	<h2>Apache</h2>
+
+	<p>The command file to run Apache web server (just close the console window to stop the server):</p>
+	<pre>startup-apache.bat</pre>
+	
+	<p>Apache configuration files:</p>
+	<pre>
+httpd.conf
+mime.types
+	</pre>
+	
+
+
+
+<h2>GeoServer</h2>
+	<p>The command file to run GeoServer (just close the console window to stop the server):</p>
+	<pre>startup-geoserver.bat</pre>
+
+	<p>The command file sets the GeoServer data directory as </p>
+	<pre>set GEOSERVER_DATA_DIR=..\..\data\geoserver_data_dir</pre>
+	
+	The above mentioned Apache <code>httpd.conf</code> file assumes the GeoServer listening the 8084 port. <br>Don't forget to setup the GeoServer port value in <code>%GEOSERVER_HOME%\etc\jetty.xml</code> file: 
+	<pre>SystemProperty name="jetty.port" default="8084"</pre>
+
+	<h2>PostgreSQL</h2>
+	<p>The command file to initialize the PostgreSQL database folder structure in <code>../../data/pgsql_data</code>:</p>
+	<pre>init-pgsql.cmd</pre>
+	<p>It generates <code>pg_config.h</code> containing connection string that can be used by C/C++ programs. e.g.:</p>
+	<pre>
+static const char * vtd_db_connection_string = "dbname='vtd_spatial_db' host=localhost port=5439 user='postgres' password='postgres' "; 
+	</pre>
+	<p>The <code>PGVARS.cmd</code> file sets the configuration variables for PostgreSQL and is called by other bat files. It defines default user, <i>non standard 5439 port</i>, data folders etc.</p>
+
+	<p>The command files to startup and shutdown PostgreSQL server:</p>
+	<pre>
+startup-pgsql.cmd
+shutdown-pgsql.cmd
+	</pre>
+	<p>The following bat files can be used to run <code>PGAdmin</code> and <code>psql</code> utilities from proper folders and with proper settings:</p>
+	<pre>
+run-pgadmin.bat
+run-psql.bat
+	</pre>
+
+	</body>
+</html>
