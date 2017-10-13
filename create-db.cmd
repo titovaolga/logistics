@@ -1,0 +1,1 @@
+call %~dp0\postgres\psql-run.cmd %~dp0\createdb.sql
