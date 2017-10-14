@@ -1,0 +1,44 @@
+﻿<Window x:Class="LogisticDB.BuyCarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogisticDB"
+        mc:Ignorable="d"
+        Title="BuyCarWindow" Height="500" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+
+        </Grid.ColumnDefinitions>
+            
+        <Label Grid.Row="0" Grid.Column="0" Content="City:" Margin="4"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" Name="CitiesComboBox" Margin="4" DisplayMemberPath="name" MinWidth="100"/>
+        <Label Grid.Row="0" Grid.Column="2" Content="Type:" Margin="4"/>
+        <ComboBox Grid.Row="0" Grid.Column="3" Name="CarTypeComboBox" Margin="4" DisplayMemberPath="cargo_type" MinWidth="100"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Date:" Margin="4"/>
+        <Calendar Name="DateCalender" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Number:" Margin="4"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="NumberTextBox" Margin="4" MinWidth="100"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Cost:" Margin="4"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="CostTextBox" Margin="4" MinWidth="100"/>
+        <StackPanel Grid.Column="100" Grid.Row="100" Orientation="Horizontal">
+            <Button Name="OkButton" Click="OkButton_Click" Content="OK" Width="100" Height="30" Margin="8"/>
+            <Button Name="CancelButton" Click="CancelButton_Click" Content="Cancel" Width="100" Height="30" Margin="8"/>
+        </StackPanel>
+    </Grid>
+</Window>

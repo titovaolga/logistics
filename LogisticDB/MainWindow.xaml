@@ -15,7 +15,9 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-    <GroupBox Grid.Row="0" Grid.Column="1" Margin="4" Header="Cities:">
+        <Button Name="BuyCarButton" Click="BuyCarButton_Click" Grid.Row="1" Grid.Column="0"  Background='White' Margin='4' Width="100" Height="35" Content="Buy car"/>
+
+        <GroupBox Grid.Row="0" Grid.Column="1" Margin="4" Header="Cities:">
       <ListView Name="CitiesListView" DisplayMemberPath="Name"/>
     </GroupBox>
     <Button Name="GetCitiesButton" Click="GetCitiesButton_Click" Grid.Row="1" Grid.Column="1"  Background='White' Margin='4' Width="100" Height="35" Content="Get cities"/>

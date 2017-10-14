@@ -34,6 +34,11 @@ namespace LogisticDB
      
       CitiesListView.ItemsSource = db.GetCities();
     }
+
+    private void BuyCarButton_Click(object sender, RoutedEventArgs e)
+    {
+        BuyCarWindow.ShowBuyDialog(db);
+    }
   }
 }
 
