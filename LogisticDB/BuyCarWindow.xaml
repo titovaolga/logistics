@@ -29,7 +29,7 @@
         <Label Grid.Row="0" Grid.Column="0" Content="City:" Margin="4"/>
         <ComboBox Grid.Row="0" Grid.Column="1" Name="CitiesComboBox" Margin="4" DisplayMemberPath="name" MinWidth="100"/>
         <Label Grid.Row="0" Grid.Column="2" Content="Type:" Margin="4"/>
-        <ComboBox Grid.Row="0" Grid.Column="3" Name="CarTypeComboBox" Margin="4" DisplayMemberPath="cargo_type" MinWidth="100"/>
+        <ComboBox Grid.Row="0" Grid.Column="3" Name="CarTypeComboBox" Margin="4" DisplayMemberPath="name" MinWidth="100"/>
         <Label Grid.Row="1" Grid.Column="0" Content="Date:" Margin="4"/>
         <Calendar Name="DateCalender" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label Grid.Row="2" Grid.Column="0" Content="Number:" Margin="4"/>

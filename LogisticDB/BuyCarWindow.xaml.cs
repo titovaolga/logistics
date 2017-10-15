@@ -37,17 +37,17 @@ namespace LogisticDB
         {
             double cost = 0;
             if (CitiesComboBox.SelectedItem == null || CarTypeComboBox.SelectedItem == null ||
-                !double.TryParse(CostTextBox.Text, out cost) || string.IsNullOrWhiteSpace(NumberTextBox.Text))
+                !double.TryParse(CostTextBox.Text, out cost) || string.IsNullOrWhiteSpace(NumberTextBox.Text))  // data???
             {
-                MessageBox.Show("Check input data", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Check input data", "", MessageBoxButton.OK, MessageBoxImage.Error); //change
                 return;
             }
                 db.BuyCar(CitiesComboBox.SelectedItem as City, 
-                    CarTypeComboBox.SelectedItem as CarType, 
+                    CarTypeComboBox.SelectedItem as CarModel, 
                     DateCalender.DisplayDate,
                     cost,
                     NumberTextBox.Text);
-
+            Close();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

@@ -27,17 +27,22 @@ namespace LogisticDB
       db = new LogisticData();
     }
 
-    private void GetCitiesButton_Click(object sender, RoutedEventArgs e)
+    /*private void GetCitiesButton_Click(object sender, RoutedEventArgs e)
     {
      // var strs = new string[] {"a", "b" };
      // var num = new [] { 1, 2 };
      
       CitiesListView.ItemsSource = db.GetCities();
-    }
+    }*/
 
     private void BuyCarButton_Click(object sender, RoutedEventArgs e)
     {
         BuyCarWindow.ShowBuyDialog(db);
+    }
+
+    private void MakeOrderButton_Click(object sender, RoutedEventArgs e)
+    {
+        MakeOrderWindow.ShowMakeOrderDialog(db);
     }
   }
 }

@@ -1,10 +1,5 @@
 C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\LogisticDB.exe
 C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\LogisticDB.pdb
-C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\Dapper.dll
-C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\Mono.Security.dll
-C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\Npgsql.dll
-C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\Npgsql.EntityFramework.dll
-C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\Npgsql.EntityFrameworkLegacy.dll
 C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\Npgsql.pdb
 C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\Npgsql.xml
 C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\bin\Debug\Npgsql.EntityFramework.pdb
@@ -33,3 +28,7 @@ C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\obj\Debug\Logistic
 C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\obj\Debug\LogisticDB.csproj.GenerateResource.Cache
 C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\obj\Debug\LogisticDB.exe
 C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\obj\Debug\LogisticDB.pdb
+C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\obj\Debug\MakeOrderWindow.g.cs
+C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\obj\Debug\MakeOrderWindow.baml
+C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\obj\Debug\ChooseCarWindow.g.cs
+C:\Users\Olya\Documents\GitHub\Logistics\logistics\LogisticDB\obj\Debug\ChooseCarWindow.baml

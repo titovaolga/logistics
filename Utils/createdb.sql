@@ -34,7 +34,7 @@ BEGIN
 END;
 $$;
 
-
+/*
 CREATE TABLE IF NOT EXISTS cartypes
 (
   id serial PRIMARY KEY,
@@ -44,7 +44,19 @@ CREATE TABLE IF NOT EXISTS cartypes
   cost_stand double precision NOT NULL,
   payload real NOT NULL CHECK (payload > 0)
 );
+*/
 
+
+CREATE TABLE IF NOT EXISTS carmodels
+(
+  id serial NOT NULL PRIMARY KEY,
+  name text NOT NULL,
+  cargo_type text NOT NULL,
+  payload real NOT NULL (payload > 0),
+  cost_empty double precision NOT NULL (cost_empty > 0),
+  cost_full double precision NOT NULL (cost_full > 0),
+  cost_stand double precision NOT NULL
+);
 
 CREATE TABLE IF NOT EXISTS cars
 (
@@ -53,7 +65,6 @@ CREATE TABLE IF NOT EXISTS cars
   cost double precision NOT NULL CHECK (cost > 0),
   cartype_id integer NOT NULL
 );
-
 
 CREATE TABLE IF NOT EXISTS transactions
 (
