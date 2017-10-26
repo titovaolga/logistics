@@ -14,37 +14,36 @@ using System.Windows.Shapes;
 
 namespace LogisticDB
 {
-  /// <summary>
-  /// Interaction logic for MainWindow.xaml
-  /// </summary>
-  public partial class MainWindow : Window
-  {
-    LogisticData db;
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        LogisticData db;
         
-    public MainWindow()
-    {
-      InitializeComponent();
-      db = new LogisticData();
-    }
+        public MainWindow()
+        {
+            InitializeComponent();
+            db = new LogisticData();
+            CarsListView.ItemsSource = db.GetCarViews();
+        }
+        
+        private void BuyCarButton_Click(object sender, RoutedEventArgs e)
+        {
+            BuyCarWindow.ShowBuyDialog(db);
+       //     CarsListView.ItemsSource = db.GetCarViews();
+        }
 
-    /*private void GetCitiesButton_Click(object sender, RoutedEventArgs e)
-    {
-     // var strs = new string[] {"a", "b" };
-     // var num = new [] { 1, 2 };
-     
-      CitiesListView.ItemsSource = db.GetCities();
-    }*/
+        private void MakeOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            MakeOrderWindow.ShowMakeOrderDialog(db);
+        }
 
-    private void BuyCarButton_Click(object sender, RoutedEventArgs e)
-    {
-        BuyCarWindow.ShowBuyDialog(db);
+        private void SellCarButton_Click(object sender, RoutedEventArgs e)
+        {
+            SellCarWindow.ShowSellCarDialog(db);
+        }
     }
-
-    private void MakeOrderButton_Click(object sender, RoutedEventArgs e)
-    {
-        MakeOrderWindow.ShowMakeOrderDialog(db);
-    }
-  }
 }
 
 

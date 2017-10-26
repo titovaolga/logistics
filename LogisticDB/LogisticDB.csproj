@@ -19,35 +19,39 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Output\Bin_dbg\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <BaseIntermediateOutputPath>..\..\Obj</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\Output\Bin_rls\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <BaseIntermediateOutputPath>..\..\Obj</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper">
-      <HintPath>..\Foreign\Dapper\Dapper.dll</HintPath>
+      <HintPath>..\..\Foreign\Dapper\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security">
-      <HintPath>..\Foreign\Npgsql.ms\Mono.Security.dll</HintPath>
+      <HintPath>..\..\Foreign\Npgsql.ms\Mono.Security.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql">
-      <HintPath>..\Foreign\Npgsql.ms\Npgsql.dll</HintPath>
+      <HintPath>..\..\Foreign\Npgsql.ms\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql.EntityFramework">
-      <HintPath>..\Foreign\Npgsql.ms\Npgsql.EntityFramework.dll</HintPath>
+      <HintPath>..\..\Foreign\Npgsql.ms\Npgsql.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql.EntityFrameworkLegacy">
-      <HintPath>..\Foreign\Npgsql.ms\Npgsql.EntityFrameworkLegacy.dll</HintPath>
+      <HintPath>..\..\Foreign\Npgsql.ms\Npgsql.EntityFrameworkLegacy.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -68,15 +72,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SellCarWindow.xaml.cs">
+      <DependentUpon>SellCarWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="BuyCarWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ChooseCarWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="FooWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -91,18 +90,16 @@
     <Compile Include="BuyCarWindow.xaml.cs">
       <DependentUpon>BuyCarWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChooseCarWindow.xaml.cs">
-      <DependentUpon>ChooseCarWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FooWindow.xaml.cs">
-      <DependentUpon>FooWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LogisticData.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MakeOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SellCarWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,9 +132,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Utils\createdb.sql">
+    <Content Include="createdb.sql">
       <Link>createdb.sql</Link>
     </Content>
+    <None Include="createdb.pls" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

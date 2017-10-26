@@ -5,21 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogisticDB"
         mc:Ignorable="d"
-        Title="Logistic" Height="350" Width="525" Background="LightGray">
+        Title="Logistics" Height="350" Width="965" Background="LightGray">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        <Button Name="BuyCarButton" Click="BuyCarButton_Click" Grid.Row="0" Grid.Column="0"  Background='White' Margin='4' Width="100" Height="35" Content="Buy car"/>
-        <Button Name="MakeOrderButton" Click="MakeOrderButton_Click" Grid.Row="0" Grid.Column="1"  Background='White' Margin='4' Width="100" Height="35" Content="Make order"/>
-        <!--<GroupBox Grid.Row="0" Grid.Column="1" Margin="4" Header="Cities:">
-      <ListView Name="CitiesListView" DisplayMemberPath="Name"/>
-    </GroupBox>
-    <Button Name="GetCitiesButton" Click="GetCitiesButton_Click" Grid.Row="1" Grid.Column="1"  Background='White' Margin='4' Width="100" Height="35" Content="Get cities"/>-->
-  </Grid>
+        <GroupBox  Header="Cars:" Margin="4">
+            <ListView Name="CarsListView">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Number" Width="80" DisplayMemberBinding="{Binding registration_number}"/>
+                            <GridViewColumn Header="Model" Width="80" DisplayMemberBinding="{Binding carmodel_name}"/>
+                            <GridViewColumn Header="Cargo type" Width="80" DisplayMemberBinding="{Binding cargotype_name}"/>
+                            <GridViewColumn Header="Payload" Width="50" DisplayMemberBinding="{Binding payload}"/>
+                            <GridViewColumn Header="Buy cost" Width="65" DisplayMemberBinding="{Binding cost_buy}"/>
+                            <GridViewColumn Header="Sell cost" Width="65" DisplayMemberBinding="{Binding cost_sell}"/>
+                            <GridViewColumn Header="Cost empty" Width="65" DisplayMemberBinding="{Binding cost_empty_per_km}"/>
+                            <GridViewColumn Header="Cost full" Width="65" DisplayMemberBinding="{Binding cost_full_per_km}"/>
+                            <GridViewColumn Header="Cost stand" Width="65"  DisplayMemberBinding="{Binding cost_stand_per_day}"/>
+                            <GridViewColumn Header="Buy date" Width="90"  DisplayMemberBinding="{Binding date_buy, StringFormat='yyyy.MM.dd'}"/>
+                            <GridViewColumn Header="Sell date" Width="90"  DisplayMemberBinding="{Binding date_sell, StringFormat='yyyy.MM.dd'}"/>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="BuyCarButton" Click="BuyCarButton_Click" Grid.Row="0" Grid.Column="0"  Background='White' Margin='8' Width="100" Height="35" Content="Buy car"/>
+            <Button Name="SellCarButton" Click="SellCarButton_Click" Grid.Row="0" Grid.Column="1"  Background='White' Margin='8' Width="100" Height="35" Content="Sell car"/>
+            <Button Name="MakeOrderButton" Click="MakeOrderButton_Click" Grid.Row="0" Grid.Column="2"  Background='White' Margin='8' Width="100" Height="35" Content="Make order"/>
+        </Grid>
+    </Grid>
 </Window>

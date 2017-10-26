@@ -29,24 +29,36 @@ namespace LogisticDB
             var win = new BuyCarWindow();
             win.db = db;
             win.CitiesComboBox.ItemsSource = db.GetCities();
-            win.CarTypeComboBox.ItemsSource = db.GetCarTypes();
+            win.ModelsListView.ItemsSource = db.GetCarModelCargoTypes();
             win.ShowDialog();
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            double cost = 0;
-            if (CitiesComboBox.SelectedItem == null || CarTypeComboBox.SelectedItem == null ||
-                !double.TryParse(CostTextBox.Text, out cost) || string.IsNullOrWhiteSpace(NumberTextBox.Text))  // data???
+            if (CitiesComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Check input data", "", MessageBoxButton.OK, MessageBoxImage.Error); //change
+                MessageBox.Show("Select city!", "", MessageBoxButton.OK, MessageBoxImage.Error); 
                 return;
             }
-                db.BuyCar(CitiesComboBox.SelectedItem as City, 
-                    CarTypeComboBox.SelectedItem as CarModel, 
-                    DateCalender.DisplayDate,
-                    cost,
-                    NumberTextBox.Text);
+            if (ModelsListView.SelectedItem == null)
+            {
+                MessageBox.Show("Select model!", "", MessageBoxButton.OK, MessageBoxImage.Error); 
+                return;
+            }
+            if(string.IsNullOrWhiteSpace(NumberTextBox.Text)) 
+            {
+                MessageBox.Show("Input number!", "", MessageBoxButton.OK, MessageBoxImage.Error); 
+                return;
+            }
+            if ((DateTime)DateCalender.SelectedDate == null)
+            {
+                MessageBox.Show("Select date!", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            db.BuyCar((CitiesComboBox.SelectedItem as City).id, 
+                    (ModelsListView.SelectedItem as CarModelCargoType).id, 
+                    (DateTime)DateCalender.SelectedDate, NumberTextBox.Text);
             Close();
         }
 
